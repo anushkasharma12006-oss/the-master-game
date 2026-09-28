@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { GameCard } from "@/components/game/GameCard";
+export const Route=createFileRoute("/games/")({head:()=>({meta:[{title:"Games — THE MASTER"},{name:"description",content:"Choose from four knowledge and brain-game challenges."},{property:"og:title",content:"Games — THE MASTER"},{property:"og:description",content:"Choose from four knowledge and brain-game challenges."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:Games});
+function Games(){return <div className="page-shell"><header className="page-heading"><p className="eyebrow">Choose your challenge</p><h1>Game arena</h1><p>Four paths. One crown. Which skill will you master today?</p></header><div className="game-grid">{(["master","rapid","brain","science"] as const).map(mode=><GameCard key={mode} mode={mode}/>)}</div></div>}
